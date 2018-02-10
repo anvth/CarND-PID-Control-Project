@@ -10,3 +10,12 @@ The PID Components
 * If the car is moving away from the reference line, this will cause the steering to get larger (as the derivative sign will match the proportional sign)
 * If the car is moving towards the reference line (meaning the derivative value will be negative), the car's steering angle will get smoothed out.
 This leads to a more smoother driving experience.
+
+Finding the right Coefficients
+===============================
+
+The final values were determined by manual tuning. I tried lowering and raising values in conjunction with each other as well as tuning each individually. Two key observations I made were:
+1. The resulting steering angles were too high when I raised the values in conjunction. This lead to lot of oscillations and crashes if the speed was high.
+2. Lowering all of them together meant the car struggled on larger curves(not turning enough) and shot off the track.
+
+The ratio of the coefficients that I chose are (0.15, 0.004, 2.5).
